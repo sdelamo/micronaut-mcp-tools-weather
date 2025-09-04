@@ -1,4 +1,2 @@
-
-
-rootProject.name="micronaut-guide"
+rootProject.name="micronaut-mcp-tool-weather"
 
