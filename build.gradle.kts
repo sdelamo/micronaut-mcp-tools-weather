@@ -15,7 +15,6 @@ dependencies {
     annotationProcessor("io.micronaut.jsonschema:micronaut-json-schema-processor:1.7.0")
     implementation("io.micronaut.jsonschema:micronaut-json-schema-annotations:1.7.0")
     implementation("io.micronaut:micronaut-http-client-jdk")
-    implementation("io.micronaut:micronaut-messaging")
     runtimeOnly("ch.qos.logback:logback-classic")
     testImplementation("org.skyscreamer:jsonassert:1.5.3")
 }
