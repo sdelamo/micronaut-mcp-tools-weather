@@ -11,7 +11,7 @@ dependencies {
     annotationProcessor("io.micronaut:micronaut-graal")
     annotationProcessor("io.micronaut:micronaut-http-validation")
     implementation("io.micronaut:micronaut-jackson-databind")
-    implementation("io.micronaut.mcp:micronaut-mcp-server-java-sdk:0.0.1")
+    implementation("io.micronaut.mcp:micronaut-mcp-server-java-sdk:0.0.2")
     annotationProcessor("io.micronaut.jsonschema:micronaut-json-schema-processor:1.7.0")
     implementation("io.micronaut.jsonschema:micronaut-json-schema-annotations:1.7.0")
     implementation("io.micronaut:micronaut-http-client-jdk")
