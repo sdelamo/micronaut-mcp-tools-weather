@@ -19,7 +19,6 @@ dependencies {
     implementation("io.micronaut.jsonschema:micronaut-json-schema-annotations:1.7.0")
     implementation("io.micronaut:micronaut-http-client")
     runtimeOnly("ch.qos.logback:logback-classic")
-    testImplementation("io.micronaut:micronaut-http-client")
 }
 
 application {
