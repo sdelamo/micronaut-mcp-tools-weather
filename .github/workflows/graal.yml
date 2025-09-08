@@ -2,6 +2,8 @@ name: GraalVM Native Image builds
 on:
   release:
     types: [published]
+permissions:
+  contents: write
 jobs:
   build:
     name: Generate Native Image on ${{ matrix.os }}
