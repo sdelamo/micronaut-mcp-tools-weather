@@ -1,5 +1,7 @@
 name: GraalVM Native Image builds
-on: [push, pull_request]
+on:
+  release:
+    types: [published]
 jobs:
   build:
     name: Generate Native Image on ${{ matrix.os }}
@@ -21,8 +23,21 @@ jobs:
         run: |
           ./gradlew nativeCompile
       
-      - name: Upload binary
-        uses: actions/upload-artifact@v4
+      - name: Rename binary for OS
+        shell: bash
+        run: |
+          cd build/native/nativeCompile
+          if [[ "${{ matrix.os }}" == "windows-latest" ]]; then
+            mv micronaut-mcp-tool-weather.exe micronaut-mcp-tool-weather-windows.exe
+          elif [[ "${{ matrix.os }}" == "macos-latest" ]]; then
+            mv micronaut-mcp-tool-weather micronaut-mcp-tool-weather-macos
+          else
+            mv micronaut-mcp-tool-weather micronaut-mcp-tool-weather-linux
+          fi
+      
+      - name: Attach binary to release
+        uses: softprops/action-gh-release@v2
         with:
-          name: micronaut-mcp-tool-weather-${{ matrix.os }}
-          path: build/native/nativeCompile/micronaut-mcp-tool-weather
+          files: build/native/nativeCompile/micronaut-mcp-tool-weather-*
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
