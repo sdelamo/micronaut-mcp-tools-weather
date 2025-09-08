@@ -1,21 +1,31 @@
-## Micronaut 4.9.3 Documentation
+# Micronaut MCP Server Demo
 
-- [User Guide](https://docs.micronaut.io/4.9.3/guide/index.html)
-- [API Reference](https://docs.micronaut.io/4.9.3/api/index.html)
-- [Configuration Reference](https://docs.micronaut.io/4.9.3/guide/configurationreference.html)
-- [Micronaut Guides](https://guides.micronaut.io/index.html)
----
+[MCP Server Demo to expose weather alerts as shown in the Model Context Protocol documentation](https://modelcontextprotocol.io/docs/develop/build-server) built with Micronaut.
 
-- [Shadow Gradle Plugin](https://gradleup.com/shadow/)
-- [Micronaut Gradle Plugin documentation](https://micronaut-projects.github.io/micronaut-gradle-plugin/latest/)
-- [GraalVM Gradle Plugin documentation](https://graalvm.github.io/native-build-tools/latest/gradle-plugin.html)
-## Feature serialization-jackson documentation
+`stdio` branch for STDIO Transport.
+`http` branch for HTTP Transport.
 
-- [Micronaut Serialization Jackson Core documentation](https://micronaut-projects.github.io/micronaut-serialization/latest/guide/)
+For `stdio`,  the [releases](https://github.com/sdelamo/micronaut-mcp-tools-weather/releases) contain [GraalVM](https://graalmv.org) Native Images of the MCP Server. You can download it and use it on your computer.
 
+## Claude Configuration
 
-## Feature micronaut-aot documentation
+![](docs/claude-developer-edit-config.png)
 
-- [Micronaut AOT documentation](https://micronaut-projects.github.io/micronaut-aot/latest/guide/)
+The configuration could look like:
 
+```json
+{
+  "mcpServers": {
+      "weather": {
+          "command": "$HOME/bin/micronaut-mcp-tool-weather",
+          "args": []
+      }
+  }
+}
+```
 
+After downloading, ensure you can run the native image on your OS. For example, for macOS, you need to tell the OS that you want to [open an app that hasn't been notarized or is from an unidentified developer](https://support.apple.com/en-us/102445If).
+
+The easiest way to test the execution is to turn off the web search.
+
+![](docs/claude-get-alerts.png)
