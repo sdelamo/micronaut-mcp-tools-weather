@@ -9,4 +9,6 @@
     <root level="info">
         <appender-ref ref="STDERR" />
     </root>
+    <logger name="io.micronaut.http.client" level="TRACE"/>
+    <logger name="example.micronaut" level="TRACE"/>
 </configuration>

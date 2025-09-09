@@ -4,7 +4,8 @@ import io.micronaut.core.annotation.Introspected;
 
 import java.util.List;
 
-@Introspected public record Alerts(
+@Introspected
+public record Alerts(
     List<String> context,
     String type,
     List<Feature> features,

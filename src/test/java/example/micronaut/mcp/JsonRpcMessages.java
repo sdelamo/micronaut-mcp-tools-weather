@@ -1,4 +1,4 @@
-package example.micronaut;
+package example.micronaut.mcp;
 
 public final class JsonRpcMessages {
     private JsonRpcMessages() {
@@ -15,5 +15,8 @@ public final class JsonRpcMessages {
 
     public static final String PONG = """
         {"jsonrpc":"2.0","result":{},"id":"123"}""";
+
+    public static final String TOOLS_LIST = """
+        {"jsonrpc":"2.0","id":3,"method":"tools/list","params":{"_meta":{"progressToken":3}}}""";
 
 }

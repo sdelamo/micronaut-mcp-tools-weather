@@ -1,4 +1,4 @@
-package example.micronaut;
+package example.micronaut.mcp;
 
 import example.micronaut.weather.WeatherClient;
 import io.micronaut.mcp.annotations.Tool;

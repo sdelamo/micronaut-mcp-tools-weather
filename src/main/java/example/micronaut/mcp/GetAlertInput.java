@@ -1,4 +1,4 @@
-package example.micronaut;
+package example.micronaut.mcp;
 
 import io.micronaut.core.annotation.Introspected;
 import io.micronaut.jsonschema.JsonSchema;
