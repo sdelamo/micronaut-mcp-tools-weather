@@ -7,6 +7,7 @@ import io.micronaut.context.annotation.Prototype;
 import io.micronaut.context.annotation.Replaces;
 import io.micronaut.context.annotation.Requires;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
+import io.modelcontextprotocol.json.McpJsonMapper;
 import io.modelcontextprotocol.server.transport.StdioServerTransportProvider;
 import io.modelcontextprotocol.spec.McpServerTransportProvider;
 import jakarta.annotation.PreDestroy;
@@ -57,8 +58,8 @@ class PingTest {
 
         @Prototype
         @Replaces(McpServerTransportProvider.class)
-        McpServerTransportProvider stdioServerTransportProviderReplacement(ObjectMapper objectMapper) {
-            return new StdioServerTransportProvider(objectMapper, stdio.serverStdin, stdio.serverStdout);
+        McpServerTransportProvider stdioServerTransportProviderReplacement(McpJsonMapper mcpJsonMapper) {
+            return new StdioServerTransportProvider(mcpJsonMapper, stdio.serverStdin, stdio.serverStdout);
         }
 
         @PreDestroy
